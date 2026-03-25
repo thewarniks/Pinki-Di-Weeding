@@ -1422,7 +1422,7 @@ img {
 @media (max-width: 767px) {
   .hero-slider .slide-inner {
     /* Adjust the 80% up or down until the couple is perfectly centered */
-    background-position: 80% center !important; 
+    background-position: 78% center !important; 
 
   }
 
