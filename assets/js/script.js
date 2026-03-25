@@ -295,6 +295,30 @@
         fixedContentPos: false
     });
 
+    function preloader() {
+    if($('.preloader').length) {
+        $('.preloader').delay(100).fadeOut(500, function() {
+            // Check if wow exists before initializing to prevent errors
+            if (typeof wow !== 'undefined') {
+                wow.init();
+            }
+        });
+    }
+}
+
+// 1. Run the preloader function when the page fully loads
+$(window).on('load', function() {
+    preloader();
+});
+
+// 2. Mobile Fail-Safe: Force hide the preloader after 3 seconds 
+// just in case the mobile browser gets stuck loading an asset
+setTimeout(function() {
+    if($('.preloader').is(':visible')) {
+        preloader();
+    }
+}, 3000);
+
 
     /*------------------------------------------
         = ACTIVE GALLERY POPUP IMAGE
