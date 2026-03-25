@@ -1357,7 +1357,7 @@ img {
 
 @media (max-width: 767px) {
   .hero-slider {
-    height: 500px;
+    height: 400px;
   }
 }
 
@@ -1422,7 +1422,8 @@ img {
 @media (max-width: 767px) {
   .hero-slider .slide-inner {
     /* Adjust the 80% up or down until the couple is perfectly centered */
-    background-position: 70% center !important; 
+    background-position: 80% center !important; 
+
   }
 
     .hero-style-1 .couple-text, 
