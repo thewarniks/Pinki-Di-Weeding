@@ -681,3 +681,31 @@ setTimeout(function() {
 
 
 })(window.jQuery);
+
+document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('bg-music');
+            const btn = document.getElementById('music-toggle');
+            const text = document.getElementById('music-text');
+            let isPlaying = false;
+
+            // Optional: Set volume (0.0 to 1.0)
+            audio.volume = 0.6; 
+
+            function toggleMusic() {
+                if (isPlaying) {
+                    audio.pause();
+                    text.textContent = 'Play Music';
+                    btn.classList.remove('playing');
+                } else {
+                    audio.play().then(function() {
+                        text.textContent = 'Pause Music';
+                        btn.classList.add('playing');
+                    }).catch(function(error) {
+                        console.log("Audio playback failed or was blocked by browser:", error);
+                    });
+                }
+                isPlaying = !isPlaying;
+            }
+
+            btn.addEventListener('click', toggleMusic);
+        });

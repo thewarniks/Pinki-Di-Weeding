@@ -3708,3 +3708,62 @@ img {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* Floating Music Button Styles */
+        .music-btn {
+            position: fixed; /* Makes it float over the website */
+            bottom: 30px;
+            right: 30px;
+            z-index: 99999; /* Ensures it stays on top of everything */
+            background-color: #b19a56; /* Gold theme color */
+            color: #ffffff;
+            border: 2px solid #b19a56;
+            border-radius: 50px;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(177, 154, 86, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .music-btn:hover {
+            background-color: #9c874b;
+            border-color: #9c874b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(177, 154, 86, 0.6);
+        }
+
+        .music-btn:active {
+            transform: translateY(1px);
+        }
+
+        .music-icon {
+            font-size: 20px;
+            display: inline-block;
+        }
+
+        /* Adds a subtle animation to the music note when playing */
+        .playing .music-icon {
+            animation: bounceNote 1s infinite alternate ease-in-out;
+        }
+
+        @keyframes bounceNote {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-3px) rotate(15deg); }
+        }
+
+        /* Mobile Adjustments for the button */
+        @media (max-width: 767px) {
+            .music-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
