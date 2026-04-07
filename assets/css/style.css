@@ -281,6 +281,11 @@ img {
   margin-bottom: 45px;
 }
 
+.section-title h1 {
+  text-align: center;
+  
+}
+
 @media (max-width: 767px) {
   .section-title, .section-title-s2 {
     margin-bottom: 40px;
